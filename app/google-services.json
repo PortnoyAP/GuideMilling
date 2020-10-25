@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "957894864324",
+    "firebase_url": "https://guidemilling.firebaseio.com",
+    "project_id": "guidemilling",
+    "storage_bucket": "guidemilling.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957894864324:android:47229c257fc3010e798891",
+        "android_client_info": {
+          "package_name": "com.example.guidemilling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957894864324-dadqojfl375elkpthsiag1a39qh088qk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.guidemilling",
+            "certificate_hash": "d2794ce49a5b77570e0b3626809808b1c3d0646c"
+          }
+        },
+        {
+          "client_id": "957894864324-1qfuqlvkbb8nrihoqf8jc3kvb56tr403.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKlw_cVbknk8gkZzARXoHOtyM16SREyag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957894864324-1qfuqlvkbb8nrihoqf8jc3kvb56tr403.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

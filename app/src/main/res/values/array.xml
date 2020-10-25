@@ -1,0 +1,143 @@
+<resources>
+    <string-array name="tapMetric">
+        <item>M1 X 0.25</item>
+        <item>M2 X 0.4</item>
+        <item>M3 X 0.5</item>
+        <item>M4 X 0.7</item>
+        <item>M5 X 0.8</item>
+        <item>M6 X 1</item>
+        <item>M7 X 1</item>
+        <item>M8 X 1.25</item>
+        <item>M9 X 1.25</item>
+        <item>M10 X 1.5</item>
+        <item>M12 X 1.75</item>
+        <item>M14 X 2</item>
+        <item>M16 X 2</item>
+        <item>M18 X 2.5</item>
+        <item>M20 X 2.5</item>
+    </string-array>
+    <string-array name="preDrillingMetricCutting">
+        <item>0.75</item>
+        <item>1.60</item>
+        <item>2.50</item>
+        <item>3.30</item>
+        <item>4.20</item>
+        <item>5.00</item>
+        <item>6.00</item>
+        <item>6.80</item>
+        <item>7.80</item>
+        <item>8.50</item>
+        <item>10.20</item>
+        <item>12.00</item>
+        <item>14.00</item>
+        <item>15.5</item>
+        <item>17.5</item>
+    </string-array>
+    <string-array name="preDrillingMetricForming">
+        <item>0.88</item>
+        <item>1.82</item>
+        <item>2.80</item>
+        <item>3.70"</item>
+        <item>4.65</item>
+        <item>5.55</item>
+        <item>6.55</item>
+        <item>7.40</item>
+        <item>8.40</item>
+        <item>9.30</item>
+        <item>11.20</item>
+        <item>13.10</item>
+        <item>15.10</item>
+        <item>16.90</item>
+        <item>18.90</item>
+    </string-array>
+    <string-array name="tapMetricDiameter">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+    </string-array>
+
+
+
+    <string-array name="tapUnc">
+        <item>1–64</item>
+        <item>2–56</item>
+        <item>3–48</item>
+        <item>4–40</item>
+        <item>5–40</item>
+        <item>6–32</item>
+        <item>8–32</item>
+        <item>10–24</item>
+        <item>12–24</item>
+        <item>s1/4–20</item>
+        <item>5/16–18</item>
+        <item>3/8–16</item>
+        <item>7/16–14</item>
+        <item>1/2–13</item>
+        <item>9/16–12</item>
+    </string-array>
+    <string-array name="preDrillingUncCutting">
+        <item>1.50</item>
+        <item>1.80</item>
+        <item>2.10</item>
+        <item>2.30</item>
+        <item>2.60</item>
+        <item>2.85</item>
+        <item>3.50</item>
+        <item>3.90</item>
+        <item>4.50</item>
+        <item>5.20</item>
+        <item>6.60</item>
+        <item>8.0</item>
+        <item>9.40</item>
+        <item>10.75</item>
+        <item>12.25</item>
+    </string-array>
+    <string-array name="preDrillingUncForming">
+        <item></item>
+        <item>1.97</item>
+        <item>2.26</item>
+        <item>2.55</item>
+        <item>2.87</item>
+        <item>3.15</item>
+        <item>3.80</item>
+        <item>4.30</item>
+        <item>5.00</item>
+        <item>5.75</item>
+        <item>7.25</item>
+        <item>8.25</item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="tapUncDiameter">
+        <item>1.85</item>
+        <item>2.18</item>
+        <item>2.51</item>
+        <item>2.84</item>
+        <item>3.17</item>
+        <item>3.50</item>
+        <item>4.16</item>
+        <item>4.82</item>
+        <item>5.48</item>
+        <item>6.35</item>
+        <item>7.93</item>
+        <item>9.52</item>
+        <item>11.11</item>
+        <item>12.7</item>
+        <item>14.28</item>
+    </string-array>
+
+
+</resources>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mian_menu2"
+    android:orientation="vertical"
+    tools:context=".MainMenu">
+
+    <Button
+        android:id="@+id/button_mCode"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_buttom_third_screec"
+        android:onClick="onClickMcodeActivity"
+        android:text="@string/m_code"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/button_gcode"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_gcode"
+        app:layout_constraintTop_toBottomOf="@+id/button_gcode" />
+
+    <Button
+        android:id="@+id/button_Tap_info"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_buttom_third_screec"
+        android:onClick="toTapActivity"
+        android:text="@string/tapInformation"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/button_mCode"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_mCode"
+        app:layout_constraintTop_toBottomOf="@+id/button_mCode" />
+
+    <Button
+        android:id="@+id/button_gcode"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_buttom_third_screec"
+        android:onClick="onClickGcodeActivity"
+        android:text="@string/g_code"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/button_get_technologhy"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_get_technologhy"
+        app:layout_constraintTop_toBottomOf="@+id/button_get_technologhy" />
+
+    <Button
+        android:id="@+id/button_cnc_calculator"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_buttom_third_screec"
+        android:onClick="toCncCalculatorActivity"
+        android:text="@string/cncCalculator"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/button_Tap_info"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_Tap_info"
+        app:layout_constraintTop_toBottomOf="@+id/button_Tap_info" />
+
+    <Button
+        android:id="@+id/button_get_technologhy"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/custom_buttom_third_screec"
+        android:onClick="goToTechnologySelectorScreen"
+        android:text="@string/getMyTechnology"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_tip"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_buttom_third_screec"
+        android:onClick="toTipActivity"
+        android:text="@string/tip_of_the_day"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button_cnc_calculator"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_cnc_calculator"
+        app:layout_constraintTop_toBottomOf="@+id/button_cnc_calculator"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
