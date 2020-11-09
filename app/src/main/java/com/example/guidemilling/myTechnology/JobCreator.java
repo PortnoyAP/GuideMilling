@@ -151,7 +151,6 @@ public class JobCreator {
         switch (operation) {
             case "Side Milling":
             case "Slot Milling":
-            case "Milling":
                 tool = new Mill();
                 tool.setDiameter(toolDiameter);
                 break;
@@ -162,14 +161,10 @@ public class JobCreator {
                 break;
 
             case "Drill":
-            case "Drilling":
                 tool = new Drill();
                 tool.setDiameter(toolDiameter);
                 break;
 
-            case "Writing Text":
-                tool = new Graver();
-                break;
 
             default:
                 break;

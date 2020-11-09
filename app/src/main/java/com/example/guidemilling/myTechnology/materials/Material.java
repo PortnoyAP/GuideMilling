@@ -1,10 +1,20 @@
 package com.example.guidemilling.myTechnology.materials;
 
+import com.example.guidemilling.R;
+
 import java.util.HashMap;
 
 import static java.lang.Math.PI;
 
-public abstract class Material {
+public abstract class Material  {
+
+    final static int FIRST_RECOMMENDATION_SIDE_MILLING =R.string.side_milling_first_recomm;
+    final static int SECOND_RECOMMENDATION_SIDE_MILLING =R.string.side_milling_second_recomm;
+    final static int FIRST_RECOMMENDATION_SLOT_MILLING =R.string.slot_milling_first_recomm;
+    final static int SECOND_RECOMMENDATION_SLOT_MILLING =R.string.slot_milling_second_recomm;
+
+    final static int FIRST_RECOMMENDATION_DRILLING_HSS =R.string.drill_first_recomm;
+    final static int SECOND_RECOMMENDATION_DRILLING_HSS =R.string.drill_second_recomm;
 
     protected Float maximumCuttingSpeedMilling;
     protected Float minimumCuttingSpeedMilling;
@@ -15,13 +25,11 @@ public abstract class Material {
     protected Float slotMillingDepthCorrection;
     protected Float peckDrillHssCorrection;
 
-
     protected String type;
     protected String nameMaterial;
 
     protected HashMap<Integer, Float> feedsPerToothMilling;
-    protected int feedPerToothDrillingHss;
-
+    protected HashMap<Integer, Float> feedPerToothDrillingHss;
 
     protected int spindleSpeedMillingCalculatedMaximum;
     protected int spindleSpeedMillingCalculatedMinimum;
@@ -34,31 +42,23 @@ public abstract class Material {
     protected int feedDrillHssCalculated;
     protected int peckDrillHss;
 
-
-    protected String firstRecommendationForMilling;
-    protected String secondRecommendationForMilling;
-    protected String firstRecommendationForDrillingHss;
-    protected String secondRecommendationForDrillingHss;
-
-
-
-
-
-
     public Material() {
-       initFirstRecommendationForMilling();
-       initSecondRecommendationForMilling();
     }
 
 
     public int calculateMillingSpindleSpeedMaximum(int toolDiameter) {
-
         this.spindleSpeedMillingCalculatedMaximum = (int) ((maximumCuttingSpeedMilling * 1000) / (toolDiameter * PI));
+        if(spindleSpeedMillingCalculatedMaximum>15000){
+            spindleSpeedMillingCalculatedMaximum=15000;
+        }
         return spindleSpeedMillingCalculatedMaximum;
     }
 
     public int calculateMillingSpindleSpeedMinimum(int toolDiameter) {
         this.spindleSpeedMillingCalculatedMinimum = (int) ((minimumCuttingSpeedMilling * 1000) / (toolDiameter * PI));
+        if(spindleSpeedMillingCalculatedMinimum>15000){
+            spindleSpeedMillingCalculatedMinimum=15000;
+        }
         return spindleSpeedMillingCalculatedMinimum;
     }
 
@@ -79,8 +79,8 @@ public abstract class Material {
         return spindleSpeedDrillHssCalculated;
     }
 
-    public int calculateDrillingFeed(int numberToothTool) {
-        this.feedDrillHssCalculated = (int) (numberToothTool*cuttingSpeedDrillingHss*this.spindleSpeedDrillHssCalculated);
+    public int calculateDrillingFeed(int numberToothTool,int toolDiameter) {
+        this.feedDrillHssCalculated = (int) (numberToothTool*feedPerToothDrillingHss.get(toolDiameter)*this.spindleSpeedDrillHssCalculated);
         return feedDrillHssCalculated;
     }
 
@@ -108,42 +108,6 @@ public abstract class Material {
         this.peckDrillHss= (int) (toolDiameter*peckDrillHssCorrection);
         return peckDrillHss;
     }
-
-
-
-
-    public void initFirstRecommendationForMilling(){
-        this.firstRecommendationForMilling =("MILLING OPTIONS : \n Use one finish mill for the rough and finish :\n" +
-                "1.Rough-Leave 0.2-0.5 mm for the finish job \n" +
-                "2.Finish - It is recommended to increase RPM and decrease feed for better surface finish\n" +
-                "3.If a long cutter is required, reduce the speed and feed");
-    }
-
-    public void initSecondRecommendationForMilling(){
-        this.secondRecommendationForMilling =("MILLING OPTIONS : \n Use Finish and Rough mill\n:" +
-                "1. Rough Mill -Leave 0.2-0.5 mm for the finish job, rough mill is much stronger \n" +
-                "(rough  mill can operate at higher modes compared to a finish mill)\n" +
-                "2.Finish Mill- It is recommended to increase RPM and decrease feed for better surface finish\n" +
-                "(check the length of the cutting edge )\n" +
-                "3.Check number of teeth on your tool !");
-
-    }
-
-    public void initFirstRecommendationForDrillingHss(){
-        this.firstRecommendationForDrillingHss =("Drilling with HSS tool : [1] Before Drilling use Center Drill\n[2] Use Hss Drill ");
-    }
-
-    public void initSecondRecommendationForDrillingHss(){
-        this.secondRecommendationForDrillingHss =("Use Solid Carbide  Drill's : [1] Without pre-Drilling\n[2] Check cutting data for your Drill ");
-    }
-
-
-
-
-
-
-
-
 
 
 
@@ -207,47 +171,66 @@ public abstract class Material {
         return feedsPerToothMilling;
     }
 
-    public void setFeedsPerToothMilling(HashMap<Integer, Float> feedsPerToothMilling) {
-        this.feedsPerToothMilling = feedsPerToothMilling;
+//    public void setFeedsPerToothMilling(HashMap<Integer, Float> feedsPerToothMilling) {
+//        this.feedsPerToothMilling = feedsPerToothMilling;
+//    }
+//
+//    public int getSpindleSpeedMillingCalculatedMaximum() {
+//        return spindleSpeedMillingCalculatedMaximum;
+//    }
+//
+//    public void setSpindleSpeedMillingCalculatedMaximum(int spindleSpeedMillingCalculatedMaximum) {
+//        this.spindleSpeedMillingCalculatedMaximum = spindleSpeedMillingCalculatedMaximum;
+//    }
+//
+//    public int getSpindleSpeedMillingCalculatedMinimum() {
+//        return spindleSpeedMillingCalculatedMinimum;
+//    }
+//
+//    public void setSpindleSpeedMillingCalculatedMinimum(int spindleSpeedMillingCalculatedMinimum) {
+//        this.spindleSpeedMillingCalculatedMinimum = spindleSpeedMillingCalculatedMinimum;
+//    }
+//
+//    public int getFeedMillingCalculatedMaximum() {
+//        return feedMillingCalculatedMaximum;
+//    }
+//
+//    public void setFeedMillingCalculatedMaximum(int feedMillingCalculatedMaximum) {
+//        this.feedMillingCalculatedMaximum = feedMillingCalculatedMaximum;
+//    }
+//
+//    public int getFeedMillingCalculatedMinimum() {
+//        return feedMillingCalculatedMinimum;
+//    }
+//
+//    public void setFeedMillingCalculatedMinimum(int feedMillingCalculatedMinimum) {
+//        this.feedMillingCalculatedMinimum = feedMillingCalculatedMinimum;
+//    }
+
+
+
+
+    public int getFirstRecommendationForSideMilling() {
+        return FIRST_RECOMMENDATION_SIDE_MILLING;
     }
 
-    public int getSpindleSpeedMillingCalculatedMaximum() {
-        return spindleSpeedMillingCalculatedMaximum;
+    public int getSecondRecommendationForSideMilling() {
+        return SECOND_RECOMMENDATION_SIDE_MILLING;
     }
 
-    public void setSpindleSpeedMillingCalculatedMaximum(int spindleSpeedMillingCalculatedMaximum) {
-        this.spindleSpeedMillingCalculatedMaximum = spindleSpeedMillingCalculatedMaximum;
+    public int getFirstRecommendationForDrillingHss() {
+        return FIRST_RECOMMENDATION_DRILLING_HSS;
     }
 
-    public int getSpindleSpeedMillingCalculatedMinimum() {
-        return spindleSpeedMillingCalculatedMinimum;
+    public int getSecondRecommendationForDrillingHss() {
+        return SECOND_RECOMMENDATION_DRILLING_HSS;
     }
 
-    public void setSpindleSpeedMillingCalculatedMinimum(int spindleSpeedMillingCalculatedMinimum) {
-        this.spindleSpeedMillingCalculatedMinimum = spindleSpeedMillingCalculatedMinimum;
+    public int getFirstRecommendationSlotMilling() {
+        return FIRST_RECOMMENDATION_SLOT_MILLING;
     }
 
-    public int getFeedMillingCalculatedMaximum() {
-        return feedMillingCalculatedMaximum;
-    }
-
-    public void setFeedMillingCalculatedMaximum(int feedMillingCalculatedMaximum) {
-        this.feedMillingCalculatedMaximum = feedMillingCalculatedMaximum;
-    }
-
-    public int getFeedMillingCalculatedMinimum() {
-        return feedMillingCalculatedMinimum;
-    }
-
-    public void setFeedMillingCalculatedMinimum(int feedMillingCalculatedMinimum) {
-        this.feedMillingCalculatedMinimum = feedMillingCalculatedMinimum;
-    }
-
-    public String getFirstRecommendationForMilling() {
-        return firstRecommendationForMilling;
-    }
-
-    public String getSecondRecommendationForMilling() {
-        return secondRecommendationForMilling;
+    public int getSecondRecommendationSlotMilling() {
+        return SECOND_RECOMMENDATION_SLOT_MILLING;
     }
 }

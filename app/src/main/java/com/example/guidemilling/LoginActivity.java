@@ -36,7 +36,6 @@ public class LoginActivity extends AppCompatActivity {
     private Button logOut;
 
     private TextView userEmail;
-    private TextView emailAnnotation;
     private TextView passwordAnnotation;
     private TextView forgotPassword;
 
@@ -48,9 +47,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        Intent intent =new Intent(this, MyTechnologySelector.class);
-        startActivity(intent );
+//
+//        Intent intent =new Intent(this, MyTechnologySelector.class);
+//        startActivity(intent );
 
 
         init();
@@ -71,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         start = findViewById(R.id.buttonStart);
         logOut = findViewById(R.id.buttonLogOut);
 
-        emailAnnotation=findViewById(R.id.tv_email_annotation);
+
         passwordAnnotation=findViewById(R.id.tv_password_annotation);
 
 
@@ -150,7 +149,6 @@ public class LoginActivity extends AppCompatActivity {
         password.setVisibility(View.INVISIBLE);
         newUser.setVisibility(View.INVISIBLE);
         logIn.setVisibility(View.INVISIBLE);
-        emailAnnotation.setVisibility(View.INVISIBLE);
         passwordAnnotation.setVisibility(View.INVISIBLE);
         forgotPassword.setVisibility(View.INVISIBLE);
 
@@ -166,7 +164,6 @@ public class LoginActivity extends AppCompatActivity {
         newUser.setVisibility(View.VISIBLE);
         forgotPassword.setVisibility(View.VISIBLE);
         passwordAnnotation.setVisibility(View.VISIBLE);
-        emailAnnotation.setVisibility(View.VISIBLE);
 
         start.setVisibility(View.INVISIBLE);
         logOut.setVisibility(View.INVISIBLE);

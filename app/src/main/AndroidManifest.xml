@@ -9,14 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".toolGallery.ToolGalleryActivity"></activity>
         <activity
             android:name=".ui.login.LoginActivity2"
-            android:label="@string/title_activity_login2"></activity>
+            android:label="@string/title_activity_login2" />
         <activity android:name=".tips.TipActivity" />
         <activity android:name=".tap.TapActivity" />
         <activity android:name=".cnc_calculator.CncCalculator" />
         <activity android:name=".m_code.McodeActivity" />
-        <activity android:name=".g_code.GcodeActivity" />
+        <activity android:name=".g_m_code.GcodeActivity" />
         <activity android:name=".myTechnology.MyTechnologyResult" />
         <activity android:name=".MainMenu" />
         <activity android:name=".myTechnology.MyTechnologySelector" />

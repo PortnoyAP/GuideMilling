@@ -1,4 +1,7 @@
 <resources>
+
+    //METRIC
+
     <string-array name="tapMetric">
         <item>M1 X 0.25</item>
         <item>M2 X 0.4</item>
@@ -50,6 +53,7 @@
         <item>16.90</item>
         <item>18.90</item>
     </string-array>
+
     <string-array name="tapMetricDiameter">
         <item>1</item>
         <item>2</item>
@@ -68,6 +72,7 @@
         <item>20</item>
     </string-array>
 
+    //UNC
 
 
     <string-array name="tapUnc">
@@ -137,6 +142,98 @@
         <item>11.11</item>
         <item>12.7</item>
         <item>14.28</item>
+    </string-array>
+
+
+// HELI-COIL's...
+        //METRIC H.C
+
+    <string-array name="tapMetricHC">
+        <item>M2.5 X 0.45</item>
+        <item>M3 X 0.5</item>
+        <item>M3.5 X 0.6</item>
+        <item>M4 X 0.7</item>
+        <item>M5 X 0.8</item>
+        <item>M6 X 1</item>
+        <item>M8 X 1.25</item>
+        <item>M10 X 1.5</item>
+        <item>M12 X 1.75</item>
+        <item>M14 X 2</item>
+        <item>M16 X 2</item>
+    </string-array>
+
+    <string-array name="preDrillingMetricHC">
+        <item>2.60</item>
+        <item>3.20</item>
+        <item>3.70</item>
+        <item>4.20</item>
+        <item>5.20</item>
+        <item>6.20</item>
+        <item>8.40</item>
+        <item>10.50</item>
+        <item>12.50</item>
+        <item>14.50</item>
+        <item>16.50</item>
+    </string-array>
+
+
+    <string-array name="tapMetric_HC_Diameter">
+        <item>3.14</item>
+        <item>3.71</item>
+        <item>4.35</item>
+        <item>5.00</item>
+        <item>6.14</item>
+        <item>7.42</item>
+        <item>9.78</item>
+        <item>12.13</item>
+        <item>14.47</item>
+        <item>16.82</item>
+        <item>18.82</item>
+    </string-array>
+
+
+    //UNC H.C
+
+    <string-array name="tapUNC_HC">
+        <item>2–56</item>
+        <item>4–40</item>
+        <item>6–32</item>
+        <item>8–32</item>
+        <item>10–24</item>
+        <item>12–24</item>
+        <item>1/4–20</item>
+        <item>5/16–18</item>
+        <item>3/8–16</item>
+        <item>7/16–14</item>
+        <item>1/2–13</item>
+    </string-array>
+
+    <string-array name="preDrillingUNC_HC">
+        <item>2.40</item>
+        <item>3.00</item>
+        <item>3.70</item>
+        <item>4.40</item>
+        <item>5.10</item>
+        <item>5.80</item>
+        <item>6.70</item>
+        <item>8.40</item>
+        <item>10.0</item>
+        <item>11.70</item>
+        <item>13.30</item>
+    </string-array>
+
+    <string-array name="tapUNC_HC_Diameter">
+        <item>2.83</item>
+        <item>3.74</item>
+        <item>4.61</item>
+        <item>5.27</item>
+        <item>6.28</item>
+        <item>6.94</item>
+        <item>8.09</item>
+        <item>9.86</item>
+        <item>11.68</item>
+        <item>13.57</item>
+        <item>15.34</item>
     </string-array>
 
 

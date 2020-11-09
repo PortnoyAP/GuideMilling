@@ -27,104 +27,6 @@
     <string name="title_activity_my_technology_result">MyTechnologyResult</string>
     <string name="title_activity_gcode">GcodeActivity</string>
 
-    <string name="m_code_text">
-        "M00\nProgram stop,	Non-optional—machine always stops on reaching M00 in the program execution.\n\n"
-        "M01\nOptional program stop ,Machine only stops at M01 if operator pushes the optional stop button.\n\n"
-        "M02\nEnd of program,execution may or may not return to program top (depending on the control)may or may not reset register values.
-        M02 was the original program-end code, now considered obsolete,
-        but still supported for backward compatibility. Many modern controls treat M02 as equivalent to M30. \n\n"
-        "M03  Spindle start forward CW(Clockwise  Rotation)\n\n"
-        "M04  Spindle start reverse CCW\n\n" "M05  Spindle stop\n\n"
-        "M06 Tool change\n\n" "M07 Coolant ON – Mist coolant/Coolant thru spindle\n\n"
-        "M08 Coolant ON – Flood coolant\n\n"
-        "M09 Coolant OFF\n\n"
-        "M19 Spindle orientation\n\n"
-        "M28 Return to origin\n\n"
-        "M29 Rigid tap\n\n"
-        "M30 End of program (Reset)\n\n"
-        "M41 Low gear select\n\n"
-        "M42 High gear select\n\n"
-        "M94 Cancel mirrorimage\n\n"
-        "M95 Mirrorimage of X axis\n\n"
-        "M96 Mirrorimage of Y axis\n\n"
-        "M98 Subprogram call\n\n"
-        "M99 End of subprogram\n\n"
-    </string>
-
-    <string name="g_code_text">
-        "G00\nMove in a straight line at rapids speed.\n\n"
-        "G01\nMove in a straight line at last speed commanded by a (F)eedrate	XYZ of endpoint.\n\n"
-        "G02\nClockwise circular arc at (F)eedrate XYZ of endpoint IJK relative to center R for radius. \n\n"
-        "G03\nCounter-clockwise circular arc at (F)eedrate	XYZ of endpoint IJK relative to center R for radius.\n\n"
-        "G04\nDwell: Stop for a specified time.	P for milliseconds X for seconds.\n\n"
-        "G05\nFADAL Non-Modal Rapids.\n\n"
-        "G09\nExact stop check.\n\n"
-        "G10\nProgrammable parameter input.\n\n"
-        "G15\nTurn Polar Coordinates OFF, return to Cartesian Coordinates.\n\n"
-        "G16\nTurn Polar Coordinates ON.\n\n"
-        "G17\nSelect X-Y plane.\n\n"
-        "G18\nSelect X-Z plane.\n\n"
-	    "G19\nSelect Y-Z plane.\n\n"
-	    "G20\nProgram coordinates are inches.\n\n"
-	    "G21\nProgram coordinates are mm.\n\n"
-	    "G27\nReference point return check.\n\n"
-	    "G28\nReturn to home position.\n\n"
-	    "G29\nReturn from the reference position.\n\n"
-	    "G30\nReturn to the 2nd, 3rd, and 4th reference point.\n\n"
-	    "G32\nConstant lead threading (like G01 synchronized with spindle).\n\n"
-	    "G40\nTool cutter compensation off (radius comp.).\n\n"
-	    "G41\nTool cutter compensation left (radius comp.).\n\n"
-	    "G42\nTool cutter compensation right (radius comp.).\n\n"
-	    "G43\nApply tool length compensation (plus).\n\n"
-	    "G44\nApply tool length compensation (minus).\n\n"
-	    "G49\nTool length compensation cancel.\n\n"
-	    "G50\nReset all scale factors to 1.0.\n\n"
-	    "G51\nTurn on scale factors.\n\n"
-	    "G52\nLocal workshift for all coordinate systems: add XYZ offsets.\n\n"
-	    "G53\nMachine coordinate system (cancel work offsets).\n\n"
-	    "G54\nWork coordinate system (1st Workpiece).\n\n"
-	    "G55\nWork coordinate system (2st Workpiece).\n\n"
-	    "G56\nWork coordinate system (3st Workpiece).\n\n"
-	    "G57\nWork coordinate system (4st Workpiece).\n\n"
-	    "G58\nWork coordinate system (5st Workpiece).\n\n"
-	    "G59\nWork coordinate system (6st Workpiece).\n\n"
-	    "G61\nExact stop check mode.\n\n"
-	    "G62\nAutomatic corner override.\n\n"
-	    "G63\nTapping mode.\n\n"
-	    "G64\nBest speed path.\n\n"
-	    "G65\nCustom macro simple call.\n\n"
-	    "G68\nCoordinate System Rotation.\n\n"
-	    "G69\nCancel Coordinate System Rotation.\n\n"
-	    "G73\nHigh speed drilling cycle (small retract).\n\n"
-	    "G74\nLeft hand tapping cycle.\n\n"
-	    "G76\nFine boring cyle.\n\n"
-	    "G80\nCancel canned cycle.\n\n"
-	    "G81\nSimple drilling cycle.\n\n"
-	    "G82\nDrilling cycle with dwell (counterboring).\n\n"
-	    "G83\nPeck drilling cycle (full retract).\n\n"
-	    "G84\nTapping cycle.\n\n"
-	    "G85\nBoring canned cycle, no dwell, feed out.\n\n"
-	    "G86\nBoring canned cycle, spindle stop, rapid out.\n\n"
-	    "G87\nBack boring canned cycle.\n\n"
-	    "G88\nBoring canned cycle, spindle stop, manual out.\n\n"
-	    "G89\nBoring canned cycle, dwell, feed out.\n\n"
-	    "G90\nAbsolute programming of XYZ (type B and C systems).\n\n"
-	    "G90.1\nAbsolute programming IJK (type B and C systems).\n\n"
-	    "G91\nIncremental programming of XYZ (type B and C systems).\n\n"
-	    "G91.1\nIncremental programming IJK (type B and C systems).\n\n"
-	    "G92\nOffset coordinate system and save parameters.\n\n"
-	    "G92(alternate)\nClamp of maximum spindle speed	S.\n\n"
-	    "G92.1\nCancel offset and zero parameters.\n\n"
-	    "G92.2\nCancel offset and retain parameters.\n\n"
-	    "G92.3\nOffset coordinate system with saved parameters.\n\n"
-	    "G94\nUnits per minute feed mode. Units in inches or mm..\n\n"
-	    "G95\nUnits per revolution feed mode. Units in inches or mm.\n\n"
-	    "G96\nConstant surface speed.\n\n"
-	    "G97\nCancel constant surface speed.\n\n"
-	    "G98\nReturn to initial Z plane after canned cycle.\n\n"
-	    "G99\nReturn to initial R plane after canned cycle.\n\n"
-    </string>
-
     <string name="action_settings">Settings</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
@@ -141,9 +43,9 @@
     <string name="tool_diameter">Tool diameter</string>
     <string name="spindle_speed">Spindle Speed</string>
     <string name="feed">Feed</string>
-    <string name="option_1">Option 1</string>
-    <string name="option_2">Option 2</string>
-    <string name="selector">Selector</string>
+    <string name="option_1">Recommendation 1</string>
+    <string name="option_2">Recommendation 2</string>
+    <string name="selector">Clamping</string>
     <string name="min">MIN :</string>
     <string name="max">MAX :</string>
     <string name="more">+</string>
@@ -164,10 +66,10 @@
     <string name="calculate">Calculate</string>
     <string name="tooth_number_z">Tooth Number (Z)</string>
     <string name="feed_per_tooth_fz">Feed per Tooth (fz)</string>
-    <string name="feed_f">feed (f)</string>
+    <string name="feed_f">Feed (f) : </string>
     <string name="cutting_speed_vc">Cutting Speed (Vc)</string>
     <string name="diameter_d">Diameter\n(D)</string>
-    <string name="spindle_speed_n">spindle speed (n)</string>
+    <string name="spindle_speed_n">RPM (n) :</string>
     <string name="_0_00">0.00</string>
     <string name="drill_size_cuttung_taps">Cutting taps Drill size  :</string>
     <string name="drill_size_forming_taps">Forming taps Drill size :</string>
@@ -181,35 +83,6 @@
     <string name="create_new_user">Create New User</string>
     <string name="_6_characters_minimum">6 characters minimum</string>
     <string name="email_adress">Email Adress</string>
-
-
-    //stock recomendation for TechnologyResult
-
-    <string name="big_stock"> CLAMP OPTIONS :\n 1.Can be clamped in a vice.\n
-        2.Can be clamped in two vices(check that the pieces are on the same line!).\n
-        3.Use a table and clamps.\n
-        4.Can be clamped with asymmetric clamps.\n</string>
-
-    <string name="cylinder_stock">1.In the footer\n
-       2. Set in a vice at three points.\n</string>
-
-    <string name="small_stock">CLAMP OPTIONS :\n1.Can be clamped in a vice.\n
-        2.Can be clamped in two vices (check that the pieces are on the same line!).\n
-        3. Fix part with Hot glue
-        4. Fix the part with Double Coated Tape.\n
-        5. Fix the part on the table with clamps.\n</string>
-
-    <string name="thin_wide_stock">CLAMP OPTIONS :\n1.Vacuum board.\n
-        2.Hot glue.\n
-        3.Fix the part with Double Coated Tape.\n
-        4.Use a table and clamps.\n</string>
-
-    <string name="thin_narrow_stock">CLAMP OPTIONS :\n1.Fix the part on the table with clamps.\n
-        2.Can be clamped in a vice.\n
-        3.Can be clamped in two vices (check that the pieces are on the same line!).\n
-        4.Hot glue.\n
-        5.Fix the part with Double Coated Tape.\n
-        6.Vacuum board.\n</string>
     <string name="type">Type</string>
     <string name="title_activity_login2">LoginActivity2</string>
     <string name="prompt_email">Email</string>
@@ -220,5 +93,189 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="clamp">Clamp</string>
+    <string name="reset_password">Reset Password</string>
+
+
+
+
+    //gcode+mcode
+    <string name="m_code_text">
+        "M00\nProgram stop,	Non-optional—machine always stops on reaching M00 in the program execution.\n\n\n\n"
+        "M01\nOptional program stop ,Machine only stops at M01 if operator pushes the optional stop button.\n\n\n\n"
+        "M02\nEnd of program,execution may or may not return to program top (depending on the control)may or may not reset register values.
+        M02 was the original program-end code, now considered obsolete,
+        but still supported for backward compatibility. Many modern controls treat M02 as equivalent to M30. \n\n\n\n"
+        "M03  Spindle start forward CW(Clockwise  Rotation)\n\n\n\n"
+        "M04  Spindle start reverse CCW\n\nn\n"
+        "M05  Spindle stop\n\n\n\n"
+        "M06 Tool change\n\nn\n"
+        "M07 Coolant ON – Mist coolant/Coolant thru spindle\n\n\n\n"
+        "M08 Coolant ON – Flood coolant\n\n\n\n"
+        "M09 Coolant OFF\n\n\n\n"
+        "M19 Spindle orientation\n\n\n\n"
+        "M28 Return to origin\n\n\n\n"
+        "M29 Rigid tap\n\n"
+        "M30 End of program (Reset)\n\n\n\n"
+        "M41 Low gear select\n\n\n\n"
+        "M42 High gear select\n\n\n\n"
+        "M94 Cancel mirrorimage\n\n\n\n"
+        "M95 Mirrorimage of X axis\n\n\n\n"
+        "M96 Mirrorimage of Y axis\n\n\n\n"
+        "M98 Subprogram call\n\n\n\n"
+        "M99 End of subprogram\n\n\n\n"
+    </string>
+
+    <string name="g_code_text">
+        "G00\nMove in a straight line at rapids speed.\n\n\n\n"
+        "G01\nMove in a straight line at last speed commanded by a (F)eedrate	XYZ of endpoint.\n\n\n\n"
+        "G02\nClockwise circular arc at (F)eedrate XYZ of endpoint IJK relative to center R for radius. \n\n\n\n"
+        "G03\nCounter-clockwise circular arc at (F)eedrate	XYZ of endpoint IJK relative to center R for radius.\n\n\n\n"
+        "G04\nDwell: Stop for a specified time.	P for milliseconds X for seconds.\n\n\n\n"
+        "G05\nFADAL Non-Modal Rapids.\n\n\n\n"
+        "G09\nExact stop check.\n\n\n\n"
+        "G10\nProgrammable parameter input.\n\n\n\n"
+        "G15\nTurn Polar Coordinates OFF, return to Cartesian Coordinates.\n\n\n\n"
+        "G16\nTurn Polar Coordinates ON.\n\n\n\n"
+        "G17\nSelect X-Y plane.\n\n\n\n"
+        "G18\nSelect X-Z plane.\n\n\n\n"
+	    "G19\nSelect Y-Z plane.\n\n\n\n"
+	    "G20\nProgram coordinates are inches.\n\n\n\n"
+	    "G21\nProgram coordinates are mm.\n\n\n\n"
+	    "G27\nReference point return check.\n\n\n\n"
+	    "G28\nReturn to home position.\n\n\n\n"
+	    "G29\nReturn from the reference position.\n\n\n\n"
+	    "G30\nReturn to the 2nd, 3rd, and 4th reference point.\n\n\n\n"
+	    "G32\nConstant lead threading (like G01 synchronized with spindle).\n\n\n\n"
+	    "G40\nTool cutter compensation off (radius comp.).\n\n\n\n"
+	    "G41\nTool cutter compensation left (radius comp.).\n\n\n\n"
+	    "G42\nTool cutter compensation right (radius comp.).\n\n\n\n"
+	    "G43\nApply tool length compensation (plus).\n\n\n\n"
+	    "G44\nApply tool length compensation (minus).\n\n\n\n"
+	    "G49\nTool length compensation cancel.\n\n\n\n"
+	    "G50\nReset all scale factors to 1.0.\n\n\n\n"
+	    "G51\nTurn on scale factors.\n\n\n\n"
+	    "G52\nLocal workshift for all coordinate systems: add XYZ offsets.\n\n\n\n"
+	    "G53\nMachine coordinate system (cancel work offsets).\n\n\n\n"
+	    "G54\nWork coordinate system (1st Workpiece).\n\n\n\n"
+	    "G55\nWork coordinate system (2st Workpiece).\n\n\n\n"
+	    "G56\nWork coordinate system (3st Workpiece).\n\n\n\n"
+	    "G57\nWork coordinate system (4st Workpiece).\n\n\n\n"
+	    "G58\nWork coordinate system (5st Workpiece).\n\n\n\n"
+	    "G59\nWork coordinate system (6st Workpiece).\n\n\n\n"
+	    "G61\nExact stop check mode.\n\n\n\n"
+	    "G62\nAutomatic corner override.\n\n\n\n"
+	    "G63\nTapping mode.\n\n\n\n"
+	    "G64\nBest speed path.\n\n\n\n"
+	    "G65\nCustom macro simple call.\n\n\n\n"
+	    "G68\nCoordinate System Rotation.\n\n\n\n"
+	    "G69\nCancel Coordinate System Rotation.\n\n\n\n"
+	    "G73\nHigh speed drilling cycle (small retract).\n\n\n\n"
+	    "G74\nLeft hand tapping cycle.\n\n\n\n"
+	    "G76\nFine boring cyle.\n\n\n\n"
+	    "G80\nCancel canned cycle.\n\n\n\n"
+	    "G81\nSimple drilling cycle.\n\n\n\n"
+	    "G82\nDrilling cycle with dwell (counterboring).\n\n\n\n"
+	    "G83\nPeck drilling cycle (full retract).\n\n\n\n"
+	    "G84\nTapping cycle.\n\n\n\n"
+	    "G85\nBoring canned cycle, no dwell, feed out.\n\n\n\n"
+	    "G86\nBoring canned cycle, spindle stop, rapid out.\n\n\n\n"
+	    "G87\nBack boring canned cycle.\n\n\n\n"
+	    "G88\nBoring canned cycle, spindle stop, manual out.\n\n\n\n"
+	    "G89\nBoring canned cycle, dwell, feed out.\n\n\n\n"
+	    "G90\nAbsolute programming of XYZ (type B and C systems).\n\n\n\n"
+	    "G90.1\nAbsolute programming IJK (type B and C systems).\n\n\n\n"
+	    "G91\nIncremental programming of XYZ (type B and C systems).\n\n\n\n"
+	    "G91.1\nIncremental programming IJK (type B and C systems).\n\n\n\n"
+	    "G92\nOffset coordinate system and save parameters.\n\n\n\n"
+	    "G92(alternate)\nClamp of maximum spindle speed	S.\n\n\n\n"
+	    "G92.1\nCancel offset and zero parameters.\n\n\n\n"
+	    "G92.2\nCancel offset and retain parameters.\n\n\n\n"
+	    "G92.3\nOffset coordinate system with saved parameters.\n\n\n\n"
+	    "G94\nUnits per minute feed mode. Units in inches or mm..\n\n\n\n"
+	    "G95\nUnits per revolution feed mode. Units in inches or mm.\n\n\n\n"
+	    "G96\nConstant surface speed.\n\n\n\n"
+	    "G97\nCancel constant surface speed.\n\n\n\n"
+	    "G98\nReturn to initial Z plane after canned cycle.\n\n\n\n"
+	    "G99\nReturn to initial R plane after canned cycle.\n\n\n\n"
+    </string>
+
+    //stock recommendation for TechnologyResult
+
+    <string name="big_stock">BIG STOCK :\n\n
+        -Can be clamped in a vice.\n\n
+        -Can be clamped in two vices(check that the vices are on the same line !!!).\n\n
+        -Use a table and clamps.\n\n
+        -Can be clamped with asymmetric clamps.\n\n</string>
+
+    <string name="small_stock">SMALL STOCK :\n\n
+        -Can be clamped in a vice.\n\n
+        -Can be clamped in two vices (check that the vices are on the same line!!!).\n\n
+        -Fix part with Hot glue\n\n
+        -Fix the part with Double Coated Tape.\n\n
+        -Fix the part on the table with clamps.\n\n</string>
+
+    <string name="thin_wide_stock">THIN-WIDE STOCK:\n\n
+        -Vacuum board.\n\n
+        -Hot glue.\n\n
+        -Fix the part with Double Coated Tape.\n\n
+        -Use a table and clamps.\n\n</string>
+
+    <string name="thin_narrow_stock">THIN-NARROW STOCK:\n\n
+        -Fix the part on the table with clamps.\n\n
+        -Can be clamped in a vice.\n\n
+        -Can be clamped in two vices (check that the pieces are on the same line!).\n\n
+        -Hot glue.\n\n
+        -Fix the part with Double Coated Tape.\n\n
+        -Vacuum board.\n\n</string>
+
+    <string name="cylinder_stock">CYLINDER STOCK:\n\n
+       -In the footer\n\n
+       -Set in a vice at three points.\n\n</string>
+
+
+    // milling/drill/text/... recommendations
+
+    <string name="side_milling_first_recomm">"SIDE MILLING :\n
+* Single  mill for rough and finish job *\n\n
+1. Rough: Leave 0.2-0.5 mm offset for finish \n
+2. Finish: It is recommended to increase RPM and decrease feed for better surface finish\n
+3. If a long cutter is required, reduce the speed and feed"</string>
+
+    <string name="side_milling_second_recomm">"SIDE MILLING :\n
+* Two mills rough and finish *\n\n
+1.Rough Mill: Leave 0.2-0.5 mm offset for finish(rough  mill can operate at higher modes compared to a finish mill)\n
+2.Finish Mill: It is recommended to increase RPM and decrease feed for better surface finish(check the length of the cutting edge )\n
+3.Check number of teeth on your tool !""</string>
+
+    <string name="slot_milling_first_recomm">"SLOT MILLING :\n
+* one cutter at once to the size of the slot *\n\n
+1.Cut material along a helical trajectory or along an acceptable step down in one direction\n
+2.Milling a slot with one cutter does not guarantee a good surface, but a small step down can be used to improve it.\n
+3. If a long cutter is required, reduce the speed and feed"\n
+4.3.Check number of teeth on your tool !</string>
+
+    <string name="slot_milling_second_recomm">"SLOT MILLING :\n
+* One or Two mills rough and finish *\n\n
+1. Rough: Leave 0.2-0.5 mm offset for finish(this means that the mill must be a smaller diameter than the required slot size)
+Cut material along a helical trajectory or along an acceptable step down in one direction\n
+2. Finish: It is recommended to increase RPM and decrease feed for better surface finish\n
+3. If a long cutter is required, reduce the speed and feed"</string>
+
+    <string name="drill_first_recomm">"DRILL :\n
+* Drilling with HSS tool *\n\n
+1.Before drilling with HSS use Center Drill(pre-Drilling)\n
+2.Use peck for Hss Drill\n"</string>
+
+
+    <string name="drill_second_recomm">"DRILL :\n
+* Use Solid Carbide  Drill's *\n\n
+1.Without pre-Drilling\n
+2.Check cutting data for your Solid Carbide Drill\n"</string>
+    <string name="m_code_button">M Code</string>
+    <string name="g_code_button">G CODE</string>
+    <string name="g_m_code">G / M CODE</string>
+    <string name="gallery">Gallery</string>
+
 
 </resources>

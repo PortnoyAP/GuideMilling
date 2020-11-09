@@ -7,11 +7,11 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.guidemilling.cnc_calculator.CncCalculator;
-import com.example.guidemilling.g_code.GcodeActivity;
-import com.example.guidemilling.m_code.McodeActivity;
+import com.example.guidemilling.g_m_code.GcodeActivity;
 import com.example.guidemilling.myTechnology.MyTechnologySelector;
 import com.example.guidemilling.tap.TapActivity;
 import com.example.guidemilling.tips.TipActivity;
+import com.example.guidemilling.toolGallery.ToolGalleryActivity;
 
 
 public class MainMenu extends AppCompatActivity {
@@ -35,11 +35,6 @@ public class MainMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickMcodeActivity(View view) {
-        Intent intent=new Intent(this, McodeActivity.class);
-        startActivity(intent);
-
-    }
 
     public void toCncCalculatorActivity(View view) {
 
@@ -57,6 +52,12 @@ public class MainMenu extends AppCompatActivity {
 
     public void toTipActivity(View view) {
         Intent intent=new Intent(this, TipActivity.class);
+        startActivity(intent);
+    }
+
+
+    public void toGalleryActivity(View view) {
+        Intent intent=new Intent(this, ToolGalleryActivity.class);
         startActivity(intent);
     }
 }

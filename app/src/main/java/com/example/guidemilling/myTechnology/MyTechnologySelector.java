@@ -36,11 +36,9 @@ public class MyTechnologySelector extends AppCompatActivity {
 
 
      @Override
-        protected void onCreate(Bundle savedInstanceState) {
+     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_material_select);
-
-        materialList = new ArrayList<>();
 
         init();
         initMaterialsForSpinnerView();
@@ -49,14 +47,12 @@ public class MyTechnologySelector extends AppCompatActivity {
     }
 
 
-    private void init (){
-
-
+     private void init (){
         getTechnology=findViewById(R.id.button_get_technologhy);
-
+        materialList = new ArrayList<>();
     }
 
-    public void initMaterialsForSpinnerView(){
+     public void initMaterialsForSpinnerView(){
         materialList.add(new MaterialClassForSpinnerView('P',"P1","P1 Low-Carbon Steels", R.drawable.blue_cube));
         materialList.add(new MaterialClassForSpinnerView('P',"P2","P2 Medium/High Carbon Steels", R.drawable.blue_cube));
         materialList.add(new MaterialClassForSpinnerView('P',"P3","P3 Alloy/Tool Steel", R.drawable.blue_cube));
@@ -110,7 +106,7 @@ public class MyTechnologySelector extends AppCompatActivity {
 
     }
 
-    public void initStocksForSpinnerView() {
+     public void initStocksForSpinnerView() {
         selectStock=findViewById(R.id.spinnerStock);
 
         List<String> stocks = new ArrayList<>();
@@ -140,9 +136,7 @@ public class MyTechnologySelector extends AppCompatActivity {
 
     }
 
-
-
-    public void initOperationSpinner() {
+     public void initOperationSpinner() {
 
         selectOperation =findViewById(R.id.spinnerDiameter);
 
@@ -151,7 +145,6 @@ public class MyTechnologySelector extends AppCompatActivity {
         operations.add("Slot Milling");
         operations.add("Z Milling");
         operations.add("Drill");
-        operations.add("Writing Text");
 
         ArrayAdapter<String> adapterSpinnerJobs = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, operations);
         adapterSpinnerJobs.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -171,19 +164,13 @@ public class MyTechnologySelector extends AppCompatActivity {
 
     }
 
-    public void calculateTechnology(View view) {
-
-
+     public void calculateTechnology(View view) {
 
             Intent intent = new Intent (this,MyTechnologyResult.class);
-
             intent.putExtra("typeMaterialSelected", typeMaterialSelected);
             intent.putExtra("fullNameMaterial", fullNameMaterial);
             intent.putExtra("stockSelected", stockSelected);
             intent.putExtra("operationSelected", operationSelected);
             startActivity(intent);
-
-
     }
-
 }

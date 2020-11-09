@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/g_m_codes_screen"
-    tools:context=".g_code.GcodeActivity">
+    android:background="@drawable/back_ground_login_screen"
+    tools:context=".g_m_code.GcodeActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="399dp" />
+        app:layout_constraintGuide_end="387dp" />
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -20,20 +20,49 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2">
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/tv_gCode"
+            android:id="@+id/tv_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="1"
-            android:text="@string/g_code_text"
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="visible" />
     </ScrollView>
+
+    <Button
+        android:id="@+id/button_m_code"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:background="@drawable/custom_buttom_third_screec"
+        android:onClick="getMCodeText"
+        android:text="@string/m_code_button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.947" />
+
+    <Button
+        android:id="@+id/button_g_code"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:background="@drawable/custom_buttom_third_screec"
+        android:onClick="getGCodeText"
+        android:text="@string/g_code_button"
+        app:layout_constraintBottom_toBottomOf="@+id/button_m_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_m_code"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
