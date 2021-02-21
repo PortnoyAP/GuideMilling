@@ -48,7 +48,7 @@ public class MainMenu extends AppCompatActivity {
         startActivity(intent);
 
     }
-
+//DADA
 
     public void toTipActivity(View view) {
         Intent intent=new Intent(this, TipActivity.class);
