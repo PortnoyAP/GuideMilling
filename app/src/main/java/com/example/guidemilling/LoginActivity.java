@@ -175,6 +175,8 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
 
+
+        //WITHOUT REGISTR AND AUTH  <
     }
 
 //    public void getNewPassword(View view) {
