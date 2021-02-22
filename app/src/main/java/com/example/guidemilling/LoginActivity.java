@@ -23,7 +23,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-
+//1
 public class LoginActivity extends AppCompatActivity {
 
     private EditText eMail;
@@ -175,7 +175,7 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
 
-
+        // DRD
         //WITHOUT REGISTR AND AUTH  <
     }
 
