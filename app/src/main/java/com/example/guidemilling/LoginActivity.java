@@ -46,12 +46,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//
-//        Intent intent =new Intent(this, MyTechnologySelector.class);
-//        startActivity(intent );
-
-
         init();
 
     }
@@ -70,7 +64,6 @@ public class LoginActivity extends AppCompatActivity {
         start = findViewById(R.id.buttonStart);
         logOut = findViewById(R.id.buttonLogOut);
 
-
         passwordAnnotation=findViewById(R.id.tv_password_annotation);
 
 
@@ -82,67 +75,67 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser currentUser = myAuth.getCurrentUser();
         showIfSigned();  // temp
 
-//        if (currentUser != null) {
-//            showIfSigned();
-//            String userName = currentUser.getEmail();
-//            userEmail.setText(userName);
-//            userEmail.setVisibility(View.VISIBLE);
-//
-//        } else {
-//            showIfSignOut();
-//            Toast.makeText(this, "Enter Email & Password", Toast.LENGTH_SHORT).show();
-//        }
+        if (currentUser != null) {
+            showIfSigned();
+            String userName = currentUser.getEmail();
+            userEmail.setText(userName);
+            userEmail.setVisibility(View.VISIBLE);
+
+        } else {
+            showIfSignOut();
+            Toast.makeText(this, "Enter Email & Password", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
-//
-//    public void onClickCreateNewUser(View view) {
-//        if (!TextUtils.isEmpty(eMail.getText().toString()) && !TextUtils.isEmpty(password.getText().toString())) {
-//
-//            myAuth.createUserWithEmailAndPassword(eMail.getText().toString(), password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                @Override
-//                public void onComplete(@NonNull Task<AuthResult> task) {
-//                    if (task.isSuccessful()) {
-//                        Toast.makeText(LoginActivity.this, "User Registered ", Toast.LENGTH_SHORT).show();
-//                        showIfSigned();
-//
-//                    } else {
-//                        Toast.makeText(LoginActivity.this, "REGISTRATION FAILED", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//            });
-//
-//        } else {
-//            Toast.makeText(this, "Enter email+password", Toast.LENGTH_SHORT).show();
-//        }
-//
-//    }
-//
-//    //
-//    public void onClickLogIN(View view) {
-//        if (!TextUtils.isEmpty(eMail.getText().toString()) && !TextUtils.isEmpty(password.getText().toString())) {
-//
-//            myAuth.signInWithEmailAndPassword(eMail.getText().toString(), password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                @Override
-//                public void onComplete(@NonNull Task<AuthResult> task) {
-//                    if (task.isSuccessful()) {
-//                        Toast.makeText(LoginActivity.this, "User SignIN Successful", Toast.LENGTH_LONG).show();
-//                        showIfSigned();
-//                    } else {
-//                        Toast.makeText(LoginActivity.this, "Retry or Create new User", Toast.LENGTH_LONG).show();
-//
-//                    }
-//                }
-//            });
-//        }
-//    }
-//
-//    public void onClickLogOut(View view) {
-//
-//        FirebaseAuth.getInstance().signOut();
-//        showIfSignOut();
-//
-//    }
+
+    public void onClickCreateNewUser(View view) {
+        if (!TextUtils.isEmpty(eMail.getText().toString()) && !TextUtils.isEmpty(password.getText().toString())) {
+
+            myAuth.createUserWithEmailAndPassword(eMail.getText().toString(), password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(LoginActivity.this, "User Registered ", Toast.LENGTH_SHORT).show();
+                        showIfSigned();
+
+                    } else {
+                        Toast.makeText(LoginActivity.this, "REGISTRATION FAILED", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+        } else {
+            Toast.makeText(this, "Enter email+password", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    //
+    public void onClickLogIN(View view) {
+        if (!TextUtils.isEmpty(eMail.getText().toString()) && !TextUtils.isEmpty(password.getText().toString())) {
+
+            myAuth.signInWithEmailAndPassword(eMail.getText().toString(), password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(LoginActivity.this, "User SignIN Successful", Toast.LENGTH_LONG).show();
+                        showIfSigned();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Retry or Create new User", Toast.LENGTH_LONG).show();
+
+                    }
+                }
+            });
+        }
+    }
+
+    public void onClickLogOut(View view) {
+
+        FirebaseAuth.getInstance().signOut();
+        showIfSignOut();
+
+    }
 
     public void showIfSigned() {
         eMail.setVisibility(View.INVISIBLE);
@@ -153,23 +146,23 @@ public class LoginActivity extends AppCompatActivity {
         forgotPassword.setVisibility(View.INVISIBLE);
 
         start.setVisibility(View.VISIBLE);
-      //  logOut.setVisibility(View.VISIBLE);
+       logOut.setVisibility(View.VISIBLE);
 
     }
 
-//    public void showIfSignOut() {
-//        eMail.setVisibility(View.VISIBLE);
-//        password.setVisibility(View.VISIBLE);
-//        logIn.setVisibility(View.VISIBLE);
-//        newUser.setVisibility(View.VISIBLE);
-//        forgotPassword.setVisibility(View.VISIBLE);
-//        passwordAnnotation.setVisibility(View.VISIBLE);
-//
-//        start.setVisibility(View.INVISIBLE);
-//        logOut.setVisibility(View.INVISIBLE);
-//        userEmail.setVisibility(View.INVISIBLE);
-//
-//    }
+    public void showIfSignOut() {
+        eMail.setVisibility(View.VISIBLE);
+        password.setVisibility(View.VISIBLE);
+        logIn.setVisibility(View.VISIBLE);
+        newUser.setVisibility(View.VISIBLE);
+        forgotPassword.setVisibility(View.VISIBLE);
+        passwordAnnotation.setVisibility(View.VISIBLE);
+
+        start.setVisibility(View.INVISIBLE);
+        logOut.setVisibility(View.INVISIBLE);
+        userEmail.setVisibility(View.INVISIBLE);
+
+    }
 
     public void moveToOptionSelectorScreen(View view) {
         Intent intent = new Intent(this, MainMenu.class);
@@ -179,33 +172,33 @@ public class LoginActivity extends AppCompatActivity {
         //WITHOUT REGISTR AND AUTH  <
     }
 
-//    public void getNewPassword(View view) {
-//
-//        final EditText resetMail=new EditText(view.getContext());
-//        final AlertDialog.Builder passwordResetDialog=new AlertDialog.Builder(view.getContext());
-//        passwordResetDialog.setTitle("Reset password ?");
-//        passwordResetDialog.setMessage("Enter your Email to received reset link");
-//        passwordResetDialog.setView(resetMail);
-//
-//        passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                String email=resetMail.getText().toString();
-//                myAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void aVoid) {
-//                        Toast.makeText(LoginActivity.this, "Reset Link sent to your Email", Toast.LENGTH_SHORT).show();
-//                    }
-//                }).addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(LoginActivity.this, "Error! Link is not sent!"+e.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//
-//            }
-//        });
-//        passwordResetDialog.show();
-//    }
+    public void getNewPassword(View view) {
+
+        final EditText resetMail=new EditText(view.getContext());
+        final AlertDialog.Builder passwordResetDialog=new AlertDialog.Builder(view.getContext());
+        passwordResetDialog.setTitle("Reset password ?");
+        passwordResetDialog.setMessage("Enter your Email to received reset link");
+        passwordResetDialog.setView(resetMail);
+
+        passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String email=resetMail.getText().toString();
+                myAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(LoginActivity.this, "Reset Link sent to your Email", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(LoginActivity.this, "Error! Link is not sent!"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+        });
+        passwordResetDialog.show();
+    }
 }
 

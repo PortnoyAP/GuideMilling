@@ -1,5 +1,12 @@
 ***** Guide for beginners in CNC Milling
 
+Testing Account 
+Username Test@test.test
+Passwors testtest
+
+
+
+
 1.info about M-codes
 2.info about M-codes
 3.Tap info
