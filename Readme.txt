@@ -5,4 +5,4 @@
 3.Tap info
 4.CNC calculator
 5.Feeds + Speeds
-6.Auth on FareBase (Supressed)
+6.Auth on FareBase 
