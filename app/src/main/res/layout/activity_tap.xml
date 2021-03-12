@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/tap_screen"
-    android:foreground="@drawable/custom_buttom_first_screec"
+    android:foreground="@drawable/custom_button_first_screen"
     tools:context=".tap.TapActivity">
 
     <TextView

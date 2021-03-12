@@ -9,63 +9,55 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.guidemilling.myTechnology.MyTechnologySelector;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
+
+/** --------Testing Account--------
+ |  Username : Test@test.test  |
+ |  Passwors : testtest        |
+ -------------------------------**/
+
+
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText eMail;
-    private EditText password;
-
-    private Button logIn;
-    private Button newUser;
-
-    private Button start;
-    private Button logOut;
-
-    private TextView userEmail;
-    private TextView passwordAnnotation;
-    private TextView forgotPassword;
-
+    private TextInputLayout eMail,password;
+    private Button logIn,newUser,start,logOut;
+    private TextView userEmail,forgotPassword;
     private FirebaseAuth myAuth;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         init();
 
     }
 
     public void init() {
-        myAuth = FirebaseAuth.getInstance();
-        userEmail = findViewById(R.id.tv_user_mail);
 
         eMail = findViewById(R.id.ed_email);
         password = findViewById(R.id.ed_password);
-        forgotPassword=findViewById(R.id.tv_reset_password);
 
-        newUser = findViewById(R.id.button__signUp);
         logIn = findViewById(R.id.button_logIn);
-
+        newUser = findViewById(R.id.button__signUp);
         start = findViewById(R.id.buttonStart);
         logOut = findViewById(R.id.buttonLogOut);
 
-        passwordAnnotation=findViewById(R.id.tv_password_annotation);
+        userEmail = findViewById(R.id.tv_user_mail);
+        forgotPassword=findViewById(R.id.tv_reset_password);
 
+        myAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -73,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = myAuth.getCurrentUser();
-        showIfSigned();  // temp
+        showIfSigned();
 
         if (currentUser != null) {
             showIfSigned();
@@ -88,11 +80,11 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-
     public void onClickCreateNewUser(View view) {
-        if (!TextUtils.isEmpty(eMail.getText().toString()) && !TextUtils.isEmpty(password.getText().toString())) {
+        if (!TextUtils.isEmpty(eMail.getEditText().getText().toString()) && !TextUtils.isEmpty(password.getEditText().getText().toString())) {
 
-            myAuth.createUserWithEmailAndPassword(eMail.getText().toString(), password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            myAuth.createUserWithEmailAndPassword(eMail.getEditText().getText().toString(),
+                    password.getEditText().getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
@@ -111,11 +103,11 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    //
     public void onClickLogIN(View view) {
-        if (!TextUtils.isEmpty(eMail.getText().toString()) && !TextUtils.isEmpty(password.getText().toString())) {
+        if (!TextUtils.isEmpty(eMail.getEditText().getText().toString().trim()) && !TextUtils.isEmpty(password.getEditText().getText().toString().trim())) {
 
-            myAuth.signInWithEmailAndPassword(eMail.getText().toString(), password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            myAuth.signInWithEmailAndPassword(eMail.getEditText().getText().toString(),
+                    password.getEditText().getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
@@ -140,14 +132,11 @@ public class LoginActivity extends AppCompatActivity {
     public void showIfSigned() {
         eMail.setVisibility(View.INVISIBLE);
         password.setVisibility(View.INVISIBLE);
-        newUser.setVisibility(View.INVISIBLE);
         logIn.setVisibility(View.INVISIBLE);
-        passwordAnnotation.setVisibility(View.INVISIBLE);
-        forgotPassword.setVisibility(View.INVISIBLE);
-
+        newUser.setVisibility(View.INVISIBLE);
         start.setVisibility(View.VISIBLE);
-       logOut.setVisibility(View.VISIBLE);
-
+        logOut.setVisibility(View.VISIBLE);
+        forgotPassword.setVisibility(View.INVISIBLE);
     }
 
     public void showIfSignOut() {
@@ -155,21 +144,15 @@ public class LoginActivity extends AppCompatActivity {
         password.setVisibility(View.VISIBLE);
         logIn.setVisibility(View.VISIBLE);
         newUser.setVisibility(View.VISIBLE);
-        forgotPassword.setVisibility(View.VISIBLE);
-        passwordAnnotation.setVisibility(View.VISIBLE);
-
         start.setVisibility(View.INVISIBLE);
         logOut.setVisibility(View.INVISIBLE);
         userEmail.setVisibility(View.INVISIBLE);
-
+        forgotPassword.setVisibility(View.VISIBLE);
     }
 
     public void moveToOptionSelectorScreen(View view) {
         Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
-
-        // DRD
-        //WITHOUT REGISTR AND AUTH  <
     }
 
     public void getNewPassword(View view) {
@@ -195,7 +178,6 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Error! Link is not sent!"+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-
             }
         });
         passwordResetDialog.show();

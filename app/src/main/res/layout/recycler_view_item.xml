@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:background="@drawable/custom_buttom_first_screec">
+        android:background="@drawable/custom_button_first_screen">
 
         <ImageView
             android:id="@+id/tool_image"
@@ -22,7 +22,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="6dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/custom_buttom_third_screec"
+            android:background="@drawable/custom_button_third_screen"
             android:padding="4dp" />
 
         <TextView

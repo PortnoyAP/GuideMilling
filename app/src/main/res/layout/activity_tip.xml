@@ -11,7 +11,7 @@
         android:id="@+id/button_get_tip"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/custom_buttom_third_screec"
+        android:background="@drawable/custom_button_third_screen"
         android:onClick="getTip"
         android:text="@string/tipOfTheDay"
         android:textColor="@android:color/background_dark"
