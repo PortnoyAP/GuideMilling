@@ -9,9 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,19 +23,18 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-
-
-/** --------Testing Account--------
- |  Username : Test@test.test  |
- |  Passwors : testtest        |
- -------------------------------**/
-
+/**
+ * --------Testing Account--------
+ * |  Username : Test@test.test  |
+ * |  Password : testtest        |
+ * -------------------------------
+ **/
 
 public class LoginActivity extends AppCompatActivity {
 
-    private TextInputLayout eMail,password;
-    private Button logIn,newUser,start,logOut;
-    private TextView userEmail,forgotPassword;
+    private TextInputLayout eMail, password;
+    private Button logIn, newUser, start, logOut;
+    private TextView userEmail, forgotPassword;
     private FirebaseAuth myAuth;
 
     @Override
@@ -41,11 +42,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         init();
-
     }
 
     public void init() {
-
         eMail = findViewById(R.id.ed_email);
         password = findViewById(R.id.ed_password);
 
@@ -55,10 +54,9 @@ public class LoginActivity extends AppCompatActivity {
         logOut = findViewById(R.id.buttonLogOut);
 
         userEmail = findViewById(R.id.tv_user_mail);
-        forgotPassword=findViewById(R.id.tv_reset_password);
+        forgotPassword = findViewById(R.id.tv_reset_password);
 
         myAuth = FirebaseAuth.getInstance();
-
     }
 
     @Override
@@ -72,12 +70,10 @@ public class LoginActivity extends AppCompatActivity {
             String userName = currentUser.getEmail();
             userEmail.setText(userName);
             userEmail.setVisibility(View.VISIBLE);
-
         } else {
             showIfSignOut();
             Toast.makeText(this, "Enter Email & Password", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     public void onClickCreateNewUser(View view) {
@@ -90,17 +86,14 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Toast.makeText(LoginActivity.this, "User Registered ", Toast.LENGTH_SHORT).show();
                         showIfSigned();
-
                     } else {
                         Toast.makeText(LoginActivity.this, "REGISTRATION FAILED", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
-
         } else {
             Toast.makeText(this, "Enter email+password", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     public void onClickLogIN(View view) {
@@ -115,7 +108,6 @@ public class LoginActivity extends AppCompatActivity {
                         showIfSigned();
                     } else {
                         Toast.makeText(LoginActivity.this, "Retry or Create new User", Toast.LENGTH_LONG).show();
-
                     }
                 }
             });
@@ -123,10 +115,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onClickLogOut(View view) {
-
         FirebaseAuth.getInstance().signOut();
         showIfSignOut();
-
     }
 
     public void showIfSigned() {
@@ -156,9 +146,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void getNewPassword(View view) {
-
-        final EditText resetMail=new EditText(view.getContext());
-        final AlertDialog.Builder passwordResetDialog=new AlertDialog.Builder(view.getContext());
+        final EditText resetMail = new EditText(view.getContext());
+        final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(view.getContext());
         passwordResetDialog.setTitle("Reset password ?");
         passwordResetDialog.setMessage("Enter your Email to received reset link");
         passwordResetDialog.setView(resetMail);
@@ -166,7 +155,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String email=resetMail.getText().toString();
+                String email = resetMail.getText().toString();
                 myAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -175,7 +164,7 @@ public class LoginActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(LoginActivity.this, "Error! Link is not sent!"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Error! Link is not sent!" + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }

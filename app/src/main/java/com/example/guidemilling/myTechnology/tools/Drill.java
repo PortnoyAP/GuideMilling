@@ -1,10 +1,10 @@
 package com.example.guidemilling.myTechnology.tools;
 
-public class Drill extends Tool  {
+public class Drill extends Tool {
 
 
     public Drill() {
-        this.numberTooth=1;
+        this.numberTooth = 1;
     }
 
 //    public Drill(int diameter ) {  //default numberTooth of BluetoothA2dp is 2

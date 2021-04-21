@@ -2,19 +2,18 @@ package com.example.guidemilling.myTechnology;
 
 public class MaterialClassForSpinnerView {
 
-    private  String materialName;
-    private  int imageMaterial;
+    private String materialName;
+    private int imageMaterial;
     private char materialClass;
     private String typeClass;
 
 
-    public MaterialClassForSpinnerView(char materialClass,String typeClass, String materialName, int imageMaterial) {
-        this.materialClass =materialClass;
-        this.typeClass=typeClass;
+    public MaterialClassForSpinnerView(char materialClass, String typeClass, String materialName, int imageMaterial) {
+        this.materialClass = materialClass;
+        this.typeClass = typeClass;
         this.materialName = materialName;
         this.imageMaterial = imageMaterial;
     }
-
 
 
     public String getMaterialName() {

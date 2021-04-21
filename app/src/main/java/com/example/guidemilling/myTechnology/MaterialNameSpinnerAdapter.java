@@ -54,44 +54,52 @@ public class MaterialNameSpinnerAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View view=layoutInflater.inflate(R.layout.spiner_item,parent,false);
+        View view = layoutInflater.inflate(R.layout.spiner_item, parent, false);
 
-        MaterialClassForSpinnerView materialName=(MaterialClassForSpinnerView)getItem(position);
+        MaterialClassForSpinnerView materialName = (MaterialClassForSpinnerView) getItem(position);
 
-        TextView textViewMaterialName=(TextView) view.findViewById(R.id.name);
+        TextView textViewMaterialName = (TextView) view.findViewById(R.id.name);
         textViewMaterialName.setText(materialName.getMaterialName());
-        switch (materialName.getMaterialClass()){     /*change color text in view spinner */
-            case 'P': textViewMaterialName.setTextColor(Color.BLUE);
-            break;
+        switch (materialName.getMaterialClass()) {     /*change color text in view spinner */
+            case 'P':
+                textViewMaterialName.setTextColor(Color.BLUE);
+                break;
 
-            case 'N': textViewMaterialName.setTextColor(Color.GREEN);
-            break;
+            case 'N':
+                textViewMaterialName.setTextColor(Color.GREEN);
+                break;
 
-            case 'K': textViewMaterialName.setTextColor(Color.RED);
-            break;
+            case 'K':
+                textViewMaterialName.setTextColor(Color.RED);
+                break;
 
-            case 'M': textViewMaterialName.setTextColor(Color.YELLOW);
-            break;
+            case 'M':
+                textViewMaterialName.setTextColor(Color.YELLOW);
+                break;
 
-            case 'S': textViewMaterialName.setTextColor(Color.parseColor("#BD880D"));
-            break;
+            case 'S':
+                textViewMaterialName.setTextColor(Color.parseColor("#BD880D"));
+                break;
 
-            case 'H': textViewMaterialName.setTextColor(Color.GRAY);
-            break;
+            case 'H':
+                textViewMaterialName.setTextColor(Color.GRAY);
+                break;
 
-            case 'С': textViewMaterialName.setTextColor(Color.parseColor("#8D4F22"));
-            break;
+            case 'С':
+                textViewMaterialName.setTextColor(Color.parseColor("#8D4F22"));
+                break;
 
-            default: break;
+            default:
+                break;
 
 
         }
 
 
-        ImageView imageViewImageMaterial=(ImageView) view.findViewById(R.id.image);
+        ImageView imageViewImageMaterial = (ImageView) view.findViewById(R.id.image);
         imageViewImageMaterial.setImageResource(materialName.getImageMaterial());
 
-        return  view;
+        return view;
 
 
     }

@@ -30,11 +30,10 @@ public class TipActivity extends AppCompatActivity {
     private String title;
 
     private Date currentData;
-    private  int counter;
+    private int counter;
 
     SharedPreferences myData;
     SharedPreferences.Editor editor;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,28 +44,27 @@ public class TipActivity extends AppCompatActivity {
         getCurrentData();
         initTip();
 
-
-    }
-    public void initMyData(){
-        myData =getSharedPreferences("data", Context.MODE_PRIVATE);
-        editor= myData.edit();
     }
 
-    public void getCurrentData(){
-        currentData =new Date();
+    public void initMyData() {
+        myData = getSharedPreferences("data", Context.MODE_PRIVATE);
+        editor = myData.edit();
+    }
+
+    public void getCurrentData() {
+        currentData = new Date();
         SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd");
 
         String day;
 
+        String currentDay = formatForDateNow.format(currentData);
+        day = myData.getString("currentDay", "0");
 
-        String currentDay=formatForDateNow.format(currentData);
-        day=myData.getString("currentDay", "0");
+        counter = myData.getInt("counter", 0);
 
-        counter=myData.getInt("counter", 0);
-
-        if(day.equals("0")){
-            day=formatForDateNow.format(currentData);
-            editor.putString("currentDay",day);
+        if (day.equals("0")) {
+            day = formatForDateNow.format(currentData);
+            editor.putString("currentDay", day);
             editor.apply();
 
             counter++;
@@ -74,8 +72,8 @@ public class TipActivity extends AppCompatActivity {
             editor.apply();
 
         }
-        if(!day.equals(currentDay)){
-            editor.putString("currentDay",currentDay);
+        if (!day.equals(currentDay)) {
+            editor.putString("currentDay", currentDay);
             editor.apply();
 
             counter++;
@@ -85,13 +83,13 @@ public class TipActivity extends AppCompatActivity {
         }
 
 
-     //   Toast.makeText(this, "counter"+ myData.getInt("counter", -1), Toast.LENGTH_SHORT).show();
-      //  Toast.makeText(this, "day"+day, Toast.LENGTH_SHORT).show();
-      //  Toast.makeText(this, "currentDay"+currentDay, Toast.LENGTH_SHORT).show();
+        //   Toast.makeText(this, "counter"+ myData.getInt("counter", -1), Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(this, "day"+day, Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(this, "currentDay"+currentDay, Toast.LENGTH_SHORT).show();
     }
 
 
-    public void initTip(){
+    public void initTip() {
         DocumentReference docRef = db.collection("tips").document(String.valueOf(counter));
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -99,8 +97,8 @@ public class TipActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        tip=document.getString("tip");
-                        title=document.getString("title");
+                        tip = document.getString("tip");
+                        title = document.getString("title");
                         Log.d("f", "DocumentSnapshot data: " + document.getData());
                     } else {
                         Log.d("f", "No such document");
@@ -118,19 +116,11 @@ public class TipActivity extends AppCompatActivity {
         initDialog(tip);
     }
 
-    public void initDialog(String tip){
+    public void initDialog(String tip) {
         AlertDialog.Builder builder = new AlertDialog.Builder(TipActivity.this);
         builder.setTitle(title);
         builder.setMessage(tip);
         builder.show();
     }
-
-
-
-
-
-
-
-
 
 }

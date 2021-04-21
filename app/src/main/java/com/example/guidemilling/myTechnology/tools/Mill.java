@@ -9,15 +9,15 @@ public class Mill extends Tool {
     private int millStImage;
 
     public Mill() {
-        this.numberTooth=3;
+        this.numberTooth = 3;
         this.millAlImage = R.drawable.mill_al;
 
     }
 
     public Mill(int diameter, int numberTooth) {
         super(diameter, numberTooth);
-        this.millAlImage=R.drawable.mill_al;
-        this.millStImage =R.drawable.mill_st;
+        this.millAlImage = R.drawable.mill_al;
+        this.millStImage = R.drawable.mill_st;
     }
 
     public int getMillAlImage() {

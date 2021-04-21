@@ -24,7 +24,6 @@ import static com.example.guidemilling.R.drawable.*;
 public class CncCalculator extends AppCompatActivity {
 
 
-
     private Spinner operation;
     private Spinner maxSpSpeed;
 
@@ -55,9 +54,7 @@ public class CncCalculator extends AppCompatActivity {
         initSpinnerOperation();
         initSpinnerMaxSpSpeed();
 
-
     }
-
 
     public void init() {
 
@@ -70,7 +67,6 @@ public class CncCalculator extends AppCompatActivity {
         toothNumber = findViewById(R.id.editText_z);
         cuttingSpeed = findViewById(R.id.editText_vc);
         diameter = findViewById(R.id.editText_diameter);
-
 
     }
 
@@ -133,7 +129,7 @@ public class CncCalculator extends AppCompatActivity {
         maxSpSpeed.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-               maxSpSpeedSelected = Float.parseFloat(maxSpSpeed.getSelectedItem().toString());
+                maxSpSpeedSelected = Float.parseFloat(maxSpSpeed.getSelectedItem().toString());
             }
 
             @Override
@@ -150,10 +146,10 @@ public class CncCalculator extends AppCompatActivity {
         boolean isDiameterCorrect = false;
         boolean isToothNumberCorrect = false;
 
-        float feedPerToothFloat=0f;
+        float feedPerToothFloat = 0f;
         float cuttingSpeedFloat = 0f;
-        float diameterFloat=0f;
-        float toothNumberFloat=0f;
+        float diameterFloat = 0f;
+        float toothNumberFloat = 0f;
 
         feedPerToothInput = feedPerTooth.getText().toString();
         cuttingSpeedTextInput = cuttingSpeed.getText().toString();
@@ -225,32 +221,28 @@ public class CncCalculator extends AppCompatActivity {
             }
         }
 
-
         if (isCuttingSpeedCorrect && isFeedPerToothCorrect && isDiameterCorrect && isToothNumberCorrect) {
 
 
-            float spindleSpeedCalculated= (float) ((cuttingSpeedFloat*1000)/(diameterFloat*Math.PI));
-            float feedCalculated=feedPerToothFloat*toothNumberFloat*spindleSpeedCalculated;
+            float spindleSpeedCalculated = (float) ((cuttingSpeedFloat * 1000) / (diameterFloat * Math.PI));
+            float feedCalculated = feedPerToothFloat * toothNumberFloat * spindleSpeedCalculated;
             float cuttingSpeedCalculated;
 
-            if(spindleSpeedCalculated>maxSpSpeedSelected){
+            if (spindleSpeedCalculated > maxSpSpeedSelected) {
 
-                cuttingSpeedCalculated=(float) ((diameterFloat*Math.PI*maxSpSpeedSelected)/1000);
-                spindleSpeedCalculated= (float) ((cuttingSpeedCalculated*1000)/(diameterFloat*Math.PI));
+                cuttingSpeedCalculated = (float) ((diameterFloat * Math.PI * maxSpSpeedSelected) / 1000);
+                spindleSpeedCalculated = (float) ((cuttingSpeedCalculated * 1000) / (diameterFloat * Math.PI));
                 tv_sSpeedResult.setText(String.valueOf(spindleSpeedCalculated));
                 cuttingSpeed.setText(String.valueOf(cuttingSpeedCalculated));
 
-                feedCalculated=feedPerToothFloat*toothNumberFloat*spindleSpeedCalculated;
+                feedCalculated = feedPerToothFloat * toothNumberFloat * spindleSpeedCalculated;
                 tv_feedResult.setText(String.valueOf(feedCalculated));
 
-            }else {
-
+            } else {
 
                 tv_sSpeedResult.setText(String.valueOf(spindleSpeedCalculated));
                 tv_feedResult.setText(String.valueOf(feedCalculated));
             }
-
-
 
 
         }

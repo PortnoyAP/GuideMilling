@@ -6,15 +6,14 @@ import java.util.HashMap;
 
 import static java.lang.Math.PI;
 
-public abstract class Material  {
+public abstract class Material {
+    final static int FIRST_RECOMMENDATION_SIDE_MILLING = R.string.side_milling_first_recomm;
+    final static int SECOND_RECOMMENDATION_SIDE_MILLING = R.string.side_milling_second_recomm;
+    final static int FIRST_RECOMMENDATION_SLOT_MILLING = R.string.slot_milling_first_recomm;
+    final static int SECOND_RECOMMENDATION_SLOT_MILLING = R.string.slot_milling_second_recomm;
 
-    final static int FIRST_RECOMMENDATION_SIDE_MILLING =R.string.side_milling_first_recomm;
-    final static int SECOND_RECOMMENDATION_SIDE_MILLING =R.string.side_milling_second_recomm;
-    final static int FIRST_RECOMMENDATION_SLOT_MILLING =R.string.slot_milling_first_recomm;
-    final static int SECOND_RECOMMENDATION_SLOT_MILLING =R.string.slot_milling_second_recomm;
-
-    final static int FIRST_RECOMMENDATION_DRILLING_HSS =R.string.drill_first_recomm;
-    final static int SECOND_RECOMMENDATION_DRILLING_HSS =R.string.drill_second_recomm;
+    final static int FIRST_RECOMMENDATION_DRILLING_HSS = R.string.drill_first_recomm;
+    final static int SECOND_RECOMMENDATION_DRILLING_HSS = R.string.drill_second_recomm;
 
     protected Float maximumCuttingSpeedMilling;
     protected Float minimumCuttingSpeedMilling;
@@ -45,19 +44,18 @@ public abstract class Material  {
     public Material() {
     }
 
-
     public int calculateMillingSpindleSpeedMaximum(int toolDiameter) {
         this.spindleSpeedMillingCalculatedMaximum = (int) ((maximumCuttingSpeedMilling * 1000) / (toolDiameter * PI));
-        if(spindleSpeedMillingCalculatedMaximum>15000){
-            spindleSpeedMillingCalculatedMaximum=15000;
+        if (spindleSpeedMillingCalculatedMaximum > 15000) {
+            spindleSpeedMillingCalculatedMaximum = 15000;
         }
         return spindleSpeedMillingCalculatedMaximum;
     }
 
     public int calculateMillingSpindleSpeedMinimum(int toolDiameter) {
         this.spindleSpeedMillingCalculatedMinimum = (int) ((minimumCuttingSpeedMilling * 1000) / (toolDiameter * PI));
-        if(spindleSpeedMillingCalculatedMinimum>15000){
-            spindleSpeedMillingCalculatedMinimum=15000;
+        if (spindleSpeedMillingCalculatedMinimum > 15000) {
+            spindleSpeedMillingCalculatedMinimum = 15000;
         }
         return spindleSpeedMillingCalculatedMinimum;
     }
@@ -73,42 +71,36 @@ public abstract class Material  {
     }
 
 
-
     public int calculateDrillHssSpindleSpeed(int toolDiameter) {
         this.spindleSpeedDrillHssCalculated = (int) ((cuttingSpeedDrillingHss * 1000) / (toolDiameter * PI));
         return spindleSpeedDrillHssCalculated;
     }
 
-    public int calculateDrillingFeed(int numberToothTool,int toolDiameter) {
-        this.feedDrillHssCalculated = (int) (numberToothTool*feedPerToothDrillingHss.get(toolDiameter)*this.spindleSpeedDrillHssCalculated);
+    public int calculateDrillingFeed(int numberToothTool, int toolDiameter) {
+        this.feedDrillHssCalculated = (int) (numberToothTool * feedPerToothDrillingHss.get(toolDiameter) * this.spindleSpeedDrillHssCalculated);
         return feedDrillHssCalculated;
     }
 
 
-
-
-
-
     public int calculateSideMillingDepth(int toolDiameter) {
-        this.sideMillingDepth= (int) (toolDiameter*sideMillingDepthCorrection);
+        this.sideMillingDepth = (int) (toolDiameter * sideMillingDepthCorrection);
         return sideMillingDepth;
     }
 
     public int calculateSideMillingWidth(int toolDiameter) {
-        this.sideMillingWidth= (int) (toolDiameter*sideMillingWidthCorrection);
+        this.sideMillingWidth = (int) (toolDiameter * sideMillingWidthCorrection);
         return sideMillingWidth;
     }
 
     public int calculateSlotMillingDepth(int toolDiameter) {
-        this.slotMillingDepth= (int) (toolDiameter*slotMillingDepthCorrection);
+        this.slotMillingDepth = (int) (toolDiameter * slotMillingDepthCorrection);
         return slotMillingDepth;
     }
 
     public int calculatePeckDepthHss(int toolDiameter) {
-        this.peckDrillHss= (int) (toolDiameter*peckDrillHssCorrection);
+        this.peckDrillHss = (int) (toolDiameter * peckDrillHssCorrection);
         return peckDrillHss;
     }
-
 
 
     public Float getMaximumCuttingSpeedMilling() {
@@ -206,8 +198,6 @@ public abstract class Material  {
 //    public void setFeedMillingCalculatedMinimum(int feedMillingCalculatedMinimum) {
 //        this.feedMillingCalculatedMinimum = feedMillingCalculatedMinimum;
 //    }
-
-
 
 
     public int getFirstRecommendationForSideMilling() {

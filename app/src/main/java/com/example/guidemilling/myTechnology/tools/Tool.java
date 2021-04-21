@@ -1,6 +1,6 @@
 package com.example.guidemilling.myTechnology.tools;
 
-public  abstract class Tool {
+public abstract class Tool {
 
     protected int diameter;
     protected int numberTooth;
@@ -26,8 +26,7 @@ public  abstract class Tool {
         return numberTooth;
     }
 
-    public void setNumberTooth(int numberTooth)
-    {
+    public void setNumberTooth(int numberTooth) {
         this.numberTooth = numberTooth;
     }
 }

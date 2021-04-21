@@ -6,18 +6,11 @@ public class RecyclerViewItem {
     private String name;
     private String about;
 
-
-
-
-
     public RecyclerViewItem(int imageTool, String name, String about) {
         this.imageTool = imageTool;
         this.name = name;
         this.about = about;
     }
-
-
-
 
     public int getImageTool() {
         return imageTool;

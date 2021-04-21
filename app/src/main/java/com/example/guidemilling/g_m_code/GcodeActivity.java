@@ -12,11 +12,9 @@ import com.example.guidemilling.R;
 
 public class GcodeActivity extends AppCompatActivity {
 
-
-  private  TextView text_Code;
-  private  Button gCode;
-  private  Button mCode;
-
+    private TextView text_Code;
+    private Button gCode;
+    private Button mCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,23 +24,19 @@ public class GcodeActivity extends AppCompatActivity {
 
     }
 
+    public void init() {
 
-
-
-
-    public void init(){
-
-        gCode=findViewById(R.id.button_g_code);
-        mCode=findViewById(R.id.button_m_code);
-        text_Code =findViewById(R.id.tv_code);
+        gCode = findViewById(R.id.button_g_code);
+        mCode = findViewById(R.id.button_m_code);
+        text_Code = findViewById(R.id.tv_code);
     }
-
 
     public void getMCodeText(View view) {
 
         text_Code.setText(getString(R.string.m_code_text));
 
     }
+
     public void getGCodeText(View view) {
 
         text_Code.setText(getString(R.string.g_code_text));
